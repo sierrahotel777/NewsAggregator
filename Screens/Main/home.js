@@ -23,7 +23,7 @@ const Home = () => {
                         <Image source={{ uri: item.image }} style={styles.trendingImage} />
                         <Text style={styles.itemTitle}>{item.title}</Text>
                         <Text style={styles.itemSource}>{item.source}</Text>
-                        <View flexDirection='row' justifyContent='space-between' alignItems='center'>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                             <Text style={styles.itemCategory}>{item.category}</Text>
                             <Text style={styles.itemTime}>{item.time}</Text>
                         </View>
@@ -44,7 +44,7 @@ const Home = () => {
                 renderItem={({ item }) => (
                     <View style={styles.latestCard}>
                         <Image source={{ uri: item.image }} style={styles.latestImage} />
-                        <View flex='1'>
+                        <View style={{ flex: 1 }}>
                             <Text style={styles.itemTitle}>{item.title}</Text>
                             <Text style={styles.itemSource}>{item.source}</Text>
                             <View flexDirection='row' justifyContent='space-between' alignItems='center'>
@@ -55,21 +55,6 @@ const Home = () => {
                     </View>
                 )}
             />
-
-            <View style={styles.bottomNav}>
-                <TouchableOpacity>
-                    <Text style={styles.navItem}>Home</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.navItem}>Explore</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.navItem}>Bookmark</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.navItem}>Profile</Text>
-                </TouchableOpacity>
-            </View>
         </View >
     );
 };

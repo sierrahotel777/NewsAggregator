@@ -1,9 +1,16 @@
 import React from 'react';
-import TrendingPage from './Screens/Main/trending';
+import { View, SafeAreaView } from 'react-native';
+import UpdateProfile from './Screens/UserProfile/updateProfile';
+import Navigation from './Screens/Components/navigation';
 
 function App() {
   return (
-    <TrendingPage />
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1, paddingBottom: 60 }}>
+        <UpdateProfile />
+      </View>
+      <Navigation />
+    </SafeAreaView>
   );
 }
 

@@ -6,22 +6,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#121212',
         paddingHorizontal: 16,
     },
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginVertical: 16,
-    },
-    appTitle: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#FF5733',
-    },
-    iconlogo: {
-        marginTop: 4,
-        width: 25,
-        height: 25,
-    },
     searchBar: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -29,7 +13,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         paddingHorizontal: 12,
         marginVertical: 8,
-        marginBottom: 16,
+        marginBottom: 20,
     },
     searchInput: {
         flex: 1,
@@ -65,18 +49,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#007BFF',
     },
-    bottomNav: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        backgroundColor: '#1E1E1E',
-        paddingVertical: 16,
-        width: '100%',
-    },
-    navItem: {
-        fontSize: 14,
-        color: '#fff',
-    },
+
 });
 
 export default styles;
