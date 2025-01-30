@@ -6,7 +6,6 @@ import styles from './updateProfile.css.js';
 const UpdateProfile = () => {
   const [profile, setProfile] = useState({
     username: 'mark_samuel',
-    fullName: 'Mark Samuel',
     email: 'example@youremail.com',
     phone: '+911111111',
     bio: 'Lorem Ipsum is simply dummy text of the printing',

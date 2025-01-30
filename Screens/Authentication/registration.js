@@ -14,7 +14,7 @@ const Login = () => {
 
     const handleRegistration = () => {
         if (phoneNumber.length > 0) {
-            console.log('Name:', name,'Email:', email);
+            console.log('Name:', name, 'Email:', email);
             console.log('Registration Successful', `Phone Number: ${callingCode} ${phoneNumber}`);
         } else {
             console.log('Error', 'Please enter a valid phone number.');

@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     headerText: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#ffffff',
+        color: '#FF5733',
     },
     headerButton: {
         padding: 10,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     label: {
-        color: '#ffffff',
+        color: '#FF5733',
         marginBottom: 5,
     },
     input: {

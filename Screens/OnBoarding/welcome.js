@@ -7,7 +7,7 @@ import styles from "./welcome.css";
 const Welcome = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Hello! 👋</Text>
+            <Text style={styles.title}>Hello!</Text>
             <Text style={styles.subtitle}>Welcome to Daily Digest 🗞️</Text>
             <View style={styles.buttonContainer}>
                 <Button title="Get Started" color="#ff3131" />

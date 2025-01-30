@@ -12,6 +12,8 @@
   "dependencies": {
     "react": "18.3.1",
     "react-native": "0.77.0",
+    "react-native-country-picker-modal": "^2.0.0",
+    "react-native-phone-number-input": "^2.1.0",
     "react-native-vector-icons": "^10.2.0"
   },
   "devDependencies": {

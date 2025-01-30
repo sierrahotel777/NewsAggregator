@@ -4,9 +4,8 @@ import styles from './profile.css';
 import Icon from 'react-native-vector-icons/FontAwesome';
 Icon.loadFont();
 import Header from '../Components/header.js';
-import Navigation from '../Components/navigation.js';
 
-const Profile = ({ navigation }) => {
+const Profile = () => {
   return (
 
     <View style={styles.container}>
@@ -16,7 +15,7 @@ const Profile = ({ navigation }) => {
           source={require('../Images/user.png')}
           style={styles.profileImage}
         />
-        <Text style={styles.name}>Mark</Text>
+        <Text style={styles.username}>Mark</Text>
         <Text style={styles.bio}>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         </Text>
@@ -35,14 +34,13 @@ const Profile = ({ navigation }) => {
           <Text style={styles.settingText}>Help</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.settingItem]}>
-          <View style={{ flexDirection: 'row',justifyContent: 'space-between' }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <Text style={[styles.settingText, { color: "#FF5733" }]}>Logout</Text>
-            <Icon name="sign-in" size={16} color="#fff" />
+            <Icon name="sign-in" size={16} color="#FF5733" />
           </View>
         </TouchableOpacity>
 
       </View>
-      <Navigation />
     </View>
   );
 };
