@@ -5,9 +5,11 @@ import latestData from '../TestData/latestData.json';
 import Header from '../Components/header.js';
 import Navigation from '../Components/navigation.js';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 Icon.loadFont();
 
 const LatestPage = () => {
+    const navigation = useNavigation();
     Header.setTitle = 'Latest News';//NNED TO FIX
     return (
         <View style={styles.container}>

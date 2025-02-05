@@ -4,8 +4,11 @@ import styles from './profile.css';
 import Icon from 'react-native-vector-icons/FontAwesome';
 Icon.loadFont();
 import Header from '../Components/header.js';
+import Navigation from '../Components/navigation';
+import { useNavigation } from '@react-navigation/native';
 
 const Profile = () => {
+  const navigation = useNavigation();
   return (
 
     <View style={styles.container}>
@@ -21,6 +24,7 @@ const Profile = () => {
         </Text>
         <TouchableOpacity
           style={styles.editButton}
+          onPress={() => { navigation.navigate('UpdateProfile') }}
         >
           <Text style={styles.buttonText}>Edit Profile</Text>
         </TouchableOpacity>
@@ -28,19 +32,17 @@ const Profile = () => {
 
       <View style={styles.settings}>
         <TouchableOpacity style={styles.settingItem}>
-          <Text style={styles.settingText}>Security</Text>
+          <Text style={styles.settingText} onPress={() => { navigation.navigate('Help') }}>Help</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.settingItem}>
-          <Text style={styles.settingText}>Help</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.settingItem]}>
+        <TouchableOpacity style={[styles.settingItem]} onPress={() => { navigation.navigate('Title') }}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={[styles.settingText, { color: "#FF5733" }]}>Logout</Text>
+            <Text style={[styles.settingText, { color: "#FF5733" }]} >Logout</Text>
             <Icon name="sign-in" size={16} color="#FF5733" />
           </View>
         </TouchableOpacity>
 
       </View>
+      <Navigation />
     </View>
   );
 };

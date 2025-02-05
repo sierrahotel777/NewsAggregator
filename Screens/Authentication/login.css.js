@@ -9,14 +9,25 @@ export default StyleSheet.create({
     },
     title: {
         fontSize: 48,
-        marginBottom: -15,
+        
         fontWeight: 'bold',
         color: '#E8E8E8',
     },
     subtitle: {
         color: '#fff',
         fontSize: 18,
-        fontWeight: '300',
+        fontWeight: '300',marginBottom: 10,
+    },
+    input: {
+        width: '89%',
+        backgroundColor: 'white',
+        color: 'black',
+        padding: 15,
+        margin: 10,
+        borderWidth: 1,
+        borderColor: '#444',
+        fontSize: 16,
+        borderRadius: 8,
     },
     loginButton: {
         backgroundColor: '#ff3131',

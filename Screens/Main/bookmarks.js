@@ -9,10 +9,9 @@ import trendingData from '../TestData/trendingData.json';
 import { useNavigation } from '@react-navigation/native';
 
 
-const TrendingPage = () => {
+const BookmarksPage = () => {
     const navigation = useNavigation();
     return (
-
         <View style={styles.container}>
             <Header />
             <FlatList
@@ -42,4 +41,4 @@ const TrendingPage = () => {
     );
 };
 
-export default TrendingPage;
+export default BookmarksPage;
