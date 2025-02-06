@@ -1,20 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, ScrollView, ActivityIndicator } from 'react-native';
 import styles from './updateProfile.css.js';
 import Navigation from '../Components/navigation';
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 
 
 const UpdateProfile = () => {
+  const [user, setUser] = useState(null);
+  const userPhone = '9150688847';
+  const [loading, setLoading] = useState(true);
   const navigation = useNavigation();
-  const [profile, setProfile] = useState({
-    username: 'mark_samuel',
-    email: 'example@youremail.com',
-    phone: '+911111111',
-    bio: 'Lorem Ipsum is simply dummy text of the printing',
-  });
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [name, setName] = useState('');
+  const [bio, setBio] = useState('');
+  const [email, setEmail] = useState('');
+  useEffect(() => {
+    const fetchUser = async () => {
+      if (!userPhone) return;
 
+      try {
+        const response = await axios.post('http://192.168.0.113:8000/NA/v1/GetUser', {
+          mobileno: userPhone
+        });
+        if (response.data.message === 'Success') {
+          setUser(response.data.data);
+        }
+      } catch (error) {
+        console.error('Error fetching user:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, [userPhone]);
+
+  if (loading) {
+    return (
+      <View style={styles.loaderContainer}>
+        <ActivityIndicator size="large" color="#FF5733" />
+      </View>
+    );
+  }
   const handleInputChange = (field, value) => {
     setProfile({ ...profile, [field]: value });
   };
@@ -34,7 +63,7 @@ const UpdateProfile = () => {
 
         <View style={styles.profileImageSection}>
           <Image
-            source={require('../Images/user.png')}
+            source={user?.profile ? { uri: user.profile } : require('../Images/user.png')}
             style={styles.profileImage}
           />
           <TouchableOpacity style={styles.editImageButton}>
@@ -42,8 +71,8 @@ const UpdateProfile = () => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.form}>
-          {Object.entries(profile).map(([field, value]) => (
+        <View style={styles.formGroup}>
+          {/* {Object.entries(user).map(([field, value]) => (
             <View key={field} style={styles.formGroup}>
               <Text style={styles.label}>
                 {field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, ' $1')}
@@ -55,7 +84,45 @@ const UpdateProfile = () => {
                 style={styles.input}
               />
             </View>
-          ))}
+          ))} */}
+          <Text style={styles.label}>User Name</Text>
+          <TextInput
+            style={styles.input}
+            placeholder={user?.name}
+            placeholderTextColor="#888"
+            value={user?.name}
+            onChangeText={setName}
+          />
+          <Text style={styles.label}>Bio</Text>
+
+          <TextInput
+            style={styles.input}
+            placeholder={user?.bio}
+            placeholderTextColor="#888"
+            value={user?.bio}
+            onChangeText={setName}
+          />
+          <Text style={styles.label}>Email</Text>
+
+          <TextInput
+            style={styles.input}
+            placeholder={user?.email}
+            placeholderTextColor="#888"
+            keyboardType="email-address"
+            value={user?.email}
+            onChangeText={setName}
+          />
+          <Text style={styles.label}>Phone Number</Text>
+
+          <TextInput
+            style={styles.input}
+            placeholder={user?.mobileno}
+            placeholderTextColor="#888"
+            keyboardType="phone-pad"
+            value={user?.mobileno}
+            onChangeText={setName}
+            maxLength={10}
+          />
         </View>
       </ScrollView>
       <Navigation />
