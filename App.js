@@ -12,6 +12,7 @@ import Bookmarks from './Screens/Main/bookmarks';
 import Profile from './Screens/UserProfile/profile';
 import updateProfile from './Screens/UserProfile/updateProfile';
 import OTP from './Screens/Authentication/otp';
+import NewsDetail from './Screens/Main/NewsDetail'
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="LatestNews" component={latestNews} />
         <Stack.Screen name="TrendingNews" component={trendingNews} />
+        <Stack.Screen name="NewsDetail" component={NewsDetail} options={{ headerShown: false }} />
         <Stack.Screen name="Bookmarks" component={Bookmarks} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="UpdateProfile" component={updateProfile} />

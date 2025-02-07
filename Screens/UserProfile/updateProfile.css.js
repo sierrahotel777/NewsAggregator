@@ -56,7 +56,13 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         padding: 10,
         borderRadius: 5,
+        marginBottom: 15,
         width: '100%',
+    },
+    disabledInput: {
+        backgroundColor: '#f5f5f5',
+        color: '#666',
+        opacity: 0.8
     },
 });
 

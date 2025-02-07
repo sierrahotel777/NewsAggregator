@@ -6,6 +6,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#121212',
         paddingHorizontal: 16,
     },
+    mainContent: {
+        flex: 1,
+        paddingBottom: 60,
+    },
+    scrollContent: {
+        flex: 1,
+    },
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -38,7 +45,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginVertical: 16,
+        //marginBottom: 16,
     },
     sectionTitle: {
         fontSize: 18,
@@ -51,7 +58,7 @@ const styles = StyleSheet.create({
     },
     trendingCard: {
         marginRight: 16,
-        marginBottom: 75,
+        marginBottom: 150,
         width: 200,
     },
     trendingImage: {
@@ -78,11 +85,15 @@ const styles = StyleSheet.create({
     },
     latestCard: {
         flexDirection: 'row',
-        marginBottom: 16,
+        padding: 12,
+        marginBottom: 12,
+        backgroundColor: '#1E1E1E',
+        borderRadius: 12,
+        elevation: 3,
     },
     latestImage: {
         width: 100,
-        height: 80,
+        height: 100,
         borderRadius: 8,
         marginRight: 12,
     },
@@ -98,6 +109,23 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#fff',
     },
+    errorText: {
+        color: '#ff3131',
+        textAlign: 'center',
+        marginVertical: 10,
+        fontSize: 14
+    },
+    loadingContainer: {
+        height: 200,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    metaContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: 8,
+    }
 });
 
 export default styles;

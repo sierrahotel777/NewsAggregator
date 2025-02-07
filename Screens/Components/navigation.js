@@ -14,9 +14,6 @@ const Navigation = () => {
             <TouchableOpacity onPress={() => navigation.navigate('TrendingNews')}>
                 <Text style={styles.navItem}>Explore</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Bookmarks')}>
-                <Text style={styles.navItem}>Bookmarks</Text>
-            </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                 <Text style={styles.navItem}>Profile</Text>
             </TouchableOpacity>

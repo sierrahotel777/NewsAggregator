@@ -2,19 +2,18 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     bottomNav: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        backgroundColor: '#1E1E1E',
+        paddingVertical: 10,
         position: 'absolute',
         bottom: 0,
         left: 0,
         right: 0,
-        height: 60,
-        backgroundColor: '#000',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
         borderTopWidth: 1,
-        borderTopColor: '#333',
-        paddingBottom: 5,
-        zIndex: 1000,
+        borderTopColor: '#2A2A2A',
+        height: 60
     },
     navItem: {
         fontSize: 12,

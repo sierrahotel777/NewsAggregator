@@ -7,13 +7,14 @@ import Header from '../Components/header.js';
 import Navigation from '../Components/navigation';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import axios from 'axios';
+import { API_URL, numb } from '@env';
 
 const Profile = () => {
   const navigation = useNavigation();
   const route = useRoute();
   //const userPhone = route.params?.phone; // Get phone number from navigation parameters
   const [user, setUser] = useState(null);
-  const userPhone = '9150688847';
+  const userPhone = numb;
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const Profile = () => {
       if (!userPhone) return;
 
       try {
-        const response = await axios.post('http://192.168.0.113:8000/NA/v1/GetUser', {
+        const response = await axios.post(`${API_URL}/NA/v1/GetUser`, {
           mobileno: userPhone
         });
         if (response.data.message === 'Success') {

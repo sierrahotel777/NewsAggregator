@@ -7,6 +7,7 @@ import Header from '../Components/header.js';
 import Navigation from '../Components/navigation.js';
 import trendingData from '../TestData/trendingData.json';
 import { useNavigation } from '@react-navigation/native';
+import { API_URL } from '@env';
 
 
 const BookmarksPage = () => {

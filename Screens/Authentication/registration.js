@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, TextInput, Alert } from 'react-native';
 import styles from "./registration.css";
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
+import { API_URL } from '@env';
 
 const Register = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -15,7 +16,7 @@ const Register = () => {
             Alert.alert('Error', 'Please enter your name');
             return false;
         }
-        if (!email.trim() || !email.includes('@')) {
+        if (!email.trim() || !email.includes('@') || !email.includes('.')) {
             Alert.alert('Error', 'Please enter a valid email');
             return false;
         }
@@ -30,7 +31,7 @@ const Register = () => {
         if (!validateForm()) return;
 
         try {
-            const response = await axios.post('http://192.168.0.113:8000/NA/v1/RegisterUser', {
+            const response = await axios.post(`${API_URL}/NA/v1/RegisterUser`, {
                 name: name,
                 email: email,
                 phone: phoneNumber
@@ -72,7 +73,7 @@ const Register = () => {
 
             <TextInput
                 style={styles.input}
-                placeholder="Phone Number" 
+                placeholder="Phone Number"
                 placeholderTextColor="#888"
                 keyboardType="phone-pad"
                 value={phoneNumber}
